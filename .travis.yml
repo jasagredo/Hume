@@ -1,0 +1,9 @@
+os:
+- osx
+language: swift
+osx_image: xcode9.3
+install:
+- swift package update
+- swift package generate-xcodeproj
+xcode_project: Hume.xcodeproj # path to your xcodeproj folder
+xcode_scheme: HumeTests

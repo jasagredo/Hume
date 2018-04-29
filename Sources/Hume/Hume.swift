@@ -1,171 +1,208 @@
 import Upsurge
 
 public class HunSolver {
-    private var matriz: Matrix<Double>
+    private var matrix: Matrix<Double>
+    private var matrixMax: Matrix<Double>?
+    private var maximization: Bool
+    private var maxdif: Int
+    private var maximum: Double
     private var match: [Int]
     private var vis: [Bool]
     private var adjM: [[Int]]
     private var zeros: [(Int, Int)]
     
-    // Inicialización
-    // Coste: O(n^2)
-    public init(matriz:[[Double]]){
+    // Init
+    // Cost: O(n^2)
+    public init?(matrix:[[Double]], maxim: Bool = false) {
+        self.maximization = maxim
         self.match = [Int]()
         self.vis = [Bool]()
         self.adjM = [[Int]]()
         self.zeros = [(Int, Int)]()
-        let f = matriz.count
-        let c = matriz[0].count
+        if matrix.count == 0 || matrix[0].count == 0 {
+            return nil
+        }
+        let f = matrix.count
+        let c = matrix[0].count
+        self.maxdif = abs(f-c)
         let n = max(f,c)
-        self.matriz = Matrix(rows: n, columns: n, repeatedValue: 0)
+        self.matrix = Matrix(rows: n, columns: n, repeatedValue: 0)
+        self.maximum = 0
+        if maximization {
+            for i in 0..<f {
+                for j in 0..<c {
+                    if self.maximum < matrix[i][j] {
+                        self.maximum = matrix[i][j]
+                    }
+                }
+            }
+            self.matrixMax = Matrix(rows: n, columns: n, repeatedValue: maximum)
+        }
         for i in 0...n {
             if i < f {
                 for j in 0...n {
                     if j < c {
-                        assert(matriz[i][j] >= 0 && matriz[i][j] < Double.infinity)
-                        self.matriz[i,j] = matriz[i][j]
-                    }
-                }
-            }
-        }
-    }
-    
-    // Resolución del problema de asignación
-    // Coste: O(n^3)
-    public func resuelve() -> (Double, [(Int, Int)]){
-        var matrizResultado = self.matriz.copy()
-        // 1: Restar los mínimos de cada fila
-        for i in 0..<self.matriz.rows {
-            let mi_minimo = matrizResultado.row(i).min()
-            for j in 0..<self.matriz.columns {
-                matrizResultado[i,j] -= mi_minimo!
-            }
-        }
-        
-        // 2: Restar los mínimos de cada columna
-        let costesT = (self.matriz)′
-        matrizResultado = (matrizResultado)′
-        
-        for i in 0..<costesT.rows {
-            let mi_minimo = matrizResultado.row(i).min()
-            for j in 0..<costesT.columns {
-                matrizResultado[i,j] -= mi_minimo!
-            }
-        }
-        matrizResultado = (matrizResultado)′
-        
-        // 3: Obtener el máximo emparejamiento en la matriz de costes reducidos.
-        var pos = [(Int,Int)] ()
-        // Necesariamente en cada vuelta se suma al menos uno al numero de emparejamientos así que este bucle da O(n) vueltas
-        while (pos.count < self.matriz.rows){
-            pos = obtenerEmparejamiento(matriz: matrizResultado)
-            if pos.count < self.matriz.rows {
-                // 4: Restar el minimo en los no tachados y sumar el minimo en los tachados dos veces. Volver a 3 si no tenemos tantos emparejamientos como trabajos
-                matrizResultado = reajustarMatriz(matrizResultado, pos)
-            }
-            
-        }
-        
-        // 5: Obtener el valor del potencial
-        var resultado:Double = 0
-        for (i,j) in pos {
-            resultado += self.matriz[i,j]
-        }
-        return (resultado, pos)
-    }
-    
-    
-    // Crear las líneas de la bipartición y sumar el minimo a los tachados dos veces y restarselo a los no tachados
-    // O(n^2)
-    private func reajustarMatriz(_ mat: Matrix<Double>, _ marcados: [(Int,Int)]) -> Matrix<Double> {
-        var filas = [[Int]](repeating: [Int](repeating: 0, count: mat.rows), count: mat.rows)
-        var columnas = [[Int]](repeating: [Int](repeating: 0, count: mat.rows), count: mat.rows)
-        var f_marc = [Bool](repeating: false, count: mat.rows)
-        var c_marc = [Bool](repeating: false, count: mat.rows)
-        
-        for elem in self.zeros {                                                        // O(n^2)
-            filas[elem.0][elem.1] = 1
-            columnas[elem.1][elem.0] = 1
-        }
-        
-        for elem in marcados {                                                          // O(n)
-            filas[elem.0][elem.1] = 2
-            columnas[elem.1][elem.0] = 2
-        }
-        
-        for i in 0..<mat.rows {                                                         // O(n)
-            if filas[i].max()! < 2 && !f_marc[i] {
-                f_marc[i] = true
-                if filas[i].max()! == 1 {
-                    let idx = filas[i].indices.filter { filas[i][$0] == 1  }
-                    for e in idx {
-                        filas[i][e] = 3
-                        columnas[e][i] = 3
-                    }
-                }
-            }
-        }
-        var auxf = f_marc
-        var auxc = c_marc
-        
-        while true {                                                                    // O(n) * O(cuerpo) = O(n^2)
-            
-            for i in 0..<mat.rows {                                                             // O(n)
-                if columnas[i].max()! == 3 {
-                    c_marc[i] = true
-                    let idx = columnas[i].indices.filter { columnas[i][$0] == 2  }
-                    for e in idx {
-                        filas[e][i] = 0
-                        columnas[i][e] = 0
-                    }
-                }
-            }
-            
-            for i in 0..<mat.rows {                                                             // O(n)
-                if filas[i].max()! < 2 && !f_marc[i] {
-                    f_marc[i] = true
-                    if filas[i].max()! == 1 {
-                        let idx = filas[i].indices.filter { filas[i][$0] == 1  }
-                        for e in idx {
-                            filas[i][e] = 3
-                            columnas[e][i] = 3
+                        if matrix[i][j] == Double.infinity || matrix[i][j].isNaN || matrix[i][j] < 0 {
+                            return nil
+                        }
+                        if maximization {
+                            self.matrix[i,j] = maximum - matrix[i][j]
+                            self.matrixMax![i,j] = matrix[i][j]
+                        } else {
+                            self.matrix[i,j] = matrix[i][j]
                         }
                     }
                 }
             }
-            if auxf == f_marc && auxc == c_marc {
-                break
-            } else {
-                auxf = f_marc
-                auxc = c_marc
+        }
+        if !maximization {
+            self.matrixMax = nil
+        }
+    }
+    
+    // Solve the assignment problem
+    // Coste: O(n^3)
+    public func solve() -> (Double, [(Int, Int)]){
+        var resultMatrix = self.matrix.copy()
+        // 1: substract the minimum of each row
+        for i in 0..<self.matrix.rows {
+            let mi_minimo = resultMatrix.row(i).min()
+            for j in 0..<self.matrix.columns {
+                resultMatrix[i,j] -= mi_minimo!
             }
         }
         
-        var minimo = Double.infinity
+        // 2: substract the minimum of each column
+        let costesT = (self.matrix)′
+        resultMatrix = (resultMatrix)′
+        
+        for i in 0..<costesT.rows {
+            let mi_minimo = resultMatrix.row(i).min()
+            for j in 0..<costesT.columns {
+                resultMatrix[i,j] -= mi_minimo!
+            }
+        }
+        resultMatrix = (resultMatrix)′
+        
+        // 3: Obtain the maximum matching in the reduced cost matrix
+        var pos = [(Int,Int)] ()
+        // In each loop, the cardinal of the matching increases at least in one, so this loop runs n times
+        while (pos.count < self.matrix.rows){
+            pos = obtainMatches(matrix: resultMatrix)
+            if pos.count < self.matrix.rows {
+                // 4: Substract the minimum to not crossed elements and add it to double crossed elements
+                resultMatrix = adjustMatrix(resultMatrix, pos)
+            }
+            
+        }
+        
+        // 5: Obtain the final cost
+        var cost:Double = 0
+        for (i,j) in pos {
+            if maximization {
+                cost += self.matrixMax![i,j]
+            } else {
+                cost += self.matrix[i,j]
+            }
+        }
+        if maximization {
+            cost -= self.maximum*Double(self.maxdif)
+        }
+        return (cost, pos)
+    }
+    
+    
+    // Create the lines through the matrix and add or substract the minimum
+    // O(n^2)
+    private func adjustMatrix(_ mat: Matrix<Double>, _ mark: [(Int,Int)]) -> Matrix<Double> {
+        var rows = [[Int]](repeating: [Int](repeating: 0, count: mat.rows), count: mat.rows)
+        var columns = [[Int]](repeating: [Int](repeating: 0, count: mat.rows), count: mat.rows)
+        var markR = [Bool](repeating: false, count: mat.rows)
+        var markC = [Bool](repeating: false, count: mat.rows)
+        
+        for elem in self.zeros {                                                        // O(n^2)
+            rows[elem.0][elem.1] = 1
+            columns[elem.1][elem.0] = 1
+        }
+        
+        for elem in mark {                                                          // O(n)
+            rows[elem.0][elem.1] = 2
+            columns[elem.1][elem.0] = 2
+        }
+        
+        for i in 0..<mat.rows {                                                         // O(n)
+            if rows[i].max()! < 2 && !markR[i] {
+                markR[i] = true
+                if rows[i].max()! == 1 {
+                    let idx = rows[i].indices.filter { rows[i][$0] == 1  }
+                    for e in idx {
+                        rows[i][e] = 3
+                        columns[e][i] = 3
+                    }
+                }
+            }
+        }
+        var auxf = markR
+        var auxc = markC
+        
+        while true {                                                                    // O(n) * O(body) = O(n^2)
+            
+            for i in 0..<mat.rows {                                                             // O(n)
+                if columns[i].max()! == 3 {
+                    markC[i] = true
+                    let idx = columns[i].indices.filter { columns[i][$0] == 2  }
+                    for e in idx {
+                        rows[e][i] = 0
+                        columns[i][e] = 0
+                    }
+                }
+            }
+            
+            for i in 0..<mat.rows {                                                             // O(n)
+                if rows[i].max()! < 2 && !markR[i] {
+                    markR[i] = true
+                    if rows[i].max()! == 1 {
+                        let idx = rows[i].indices.filter { rows[i][$0] == 1  }
+                        for e in idx {
+                            rows[i][e] = 3
+                            columns[e][i] = 3
+                        }
+                    }
+                }
+            }
+            if auxf == markR && auxc == markC {
+                break
+            } else {
+                auxf = markR
+                auxc = markC
+            }
+        }
+        
+        var minimum = Double.infinity
         for i in 0..<mat.rows {                                                         // O(n^2)
-            if f_marc[i]{
+            if markR[i]{
                 for j in 0..<mat.rows {
-                    if !c_marc[j] && mat[i,j] < minimo {
-                        minimo = mat[i,j]
+                    if !markC[j] && mat[i,j] < minimum {
+                        minimum = mat[i,j]
                     }
                 }
             }
         }
         for i in 0..<mat.rows {                                                         // O(n^2)
-            if f_marc[i]{
+            if markR[i]{
                 for j in 0..<mat.rows{
-                    mat[i,j] -= minimo
+                    mat[i,j] -= minimum
                 }
             }
-            if !c_marc[i]{
+            if !markC[i]{
                 for j in 0..<mat.rows{
-                    mat[j,i] -= minimo
+                    mat[j,i] -= minimum
                 }
             }
         }
         for i in 0..<mat.rows {                                                         // O(n^2)
             for j in 0..<mat.rows {
-                mat[i,j] += minimo
+                mat[i,j] += minimum
             }
         }
         
@@ -187,10 +224,10 @@ public class HunSolver {
         return 0
     }
     
-    // Obtener emparejamiento
-    // Mediante algoritmo de Competitive Programming 4.7.4
+    // Obtain maximum cost matching
+    // Extracted from Competitive Programming 3 section 4.7.4
     // Coste: O(VE)
-    private func obtenerEmparejamiento(matriz mat: Matrix<Double>) -> [(Int, Int)] {
+    private func obtainMatches(matrix mat: Matrix<Double>) -> [(Int, Int)] {
         var MCBM = 0
         self.adjM = [[Int]]()
         self.zeros = [(Int,Int)]()
@@ -208,13 +245,13 @@ public class HunSolver {
             self.vis = [Bool](repeating: false, count: mat.rows)
             MCBM += augment(l)
         }
-        var posiciones = [(Int,Int)]()
+        var positions = [(Int,Int)]()
         for i in mat.rows..<mat.rows*2 {
             if self.match[i] != -1 {
-                posiciones.append((self.match[i], i-mat.rows))
+                positions.append((self.match[i], i-mat.rows))
             }
         }
-        return(posiciones)
+        return(positions)
     }
 }
 

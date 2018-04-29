@@ -1,0 +1,776 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		"Hume::HumePackageTests::ProductTarget" /* HumePackageTests */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = OBJ_69 /* Build configuration list for PBXAggregateTarget "HumePackageTests" */;
+			buildPhases = (
+			);
+			dependencies = (
+				OBJ_72 /* PBXTargetDependency */,
+			);
+			name = HumePackageTests;
+			productName = HumePackageTests;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		OBJ_100 /* Hyperbolic.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* Hyperbolic.swift */; };
+		OBJ_101 /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* Interval.swift */; };
+		OBJ_102 /* LinearOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* LinearOperators.swift */; };
+		OBJ_103 /* LinearType.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* LinearType.swift */; };
+		OBJ_104 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* Matrix.swift */; };
+		OBJ_105 /* MatrixArithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* MatrixArithmetic.swift */; };
+		OBJ_106 /* MatrixSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* MatrixSlice.swift */; };
+		OBJ_107 /* PointerUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* PointerUtilities.swift */; };
+		OBJ_108 /* QuadraticType.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* QuadraticType.swift */; };
+		OBJ_109 /* Real.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* Real.swift */; };
+		OBJ_110 /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_38 /* Sequence.swift */; };
+		OBJ_111 /* Span.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_39 /* Span.swift */; };
+		OBJ_112 /* Tensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* Tensor.swift */; };
+		OBJ_113 /* TensorSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* TensorSlice.swift */; };
+		OBJ_114 /* TensorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_42 /* TensorType.swift */; };
+		OBJ_115 /* Trigonometric.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_43 /* Trigonometric.swift */; };
+		OBJ_116 /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_44 /* Value.swift */; };
+		OBJ_117 /* ValueArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_45 /* ValueArray.swift */; };
+		OBJ_118 /* ValueArraySlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* ValueArraySlice.swift */; };
+		OBJ_125 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_47 /* Package.swift */; };
+		OBJ_57 /* Hume.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Hume.swift */; };
+		OBJ_59 /* Upsurge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Upsurge::Upsurge::Product" /* Upsurge.framework */; };
+		OBJ_67 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_78 /* HumeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* HumeTests.swift */; };
+		OBJ_79 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* XCTestManifests.swift */; };
+		OBJ_81 /* Hume.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Hume::Hume::Product" /* Hume.framework */; };
+		OBJ_82 /* Upsurge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Upsurge::Upsurge::Product" /* Upsurge.framework */; };
+		OBJ_89 /* 2DTensorSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* 2DTensorSlice.swift */; };
+		OBJ_90 /* Arithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* Arithmetic.swift */; };
+		OBJ_91 /* Auxiliary.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* Auxiliary.swift */; };
+		OBJ_92 /* Complex.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* Complex.swift */; };
+		OBJ_93 /* ComplexArithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* ComplexArithmetic.swift */; };
+		OBJ_94 /* ComplexArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* ComplexArray.swift */; };
+		OBJ_95 /* ComplexArrayRealSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* ComplexArrayRealSlice.swift */; };
+		OBJ_96 /* ComplexArraySlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* ComplexArraySlice.swift */; };
+		OBJ_97 /* DSP.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* DSP.swift */; };
+		OBJ_98 /* Exponential.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* Exponential.swift */; };
+		OBJ_99 /* FFT.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* FFT.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EAFBD665209609B300D5D46A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Upsurge::Upsurge";
+			remoteInfo = Upsurge;
+		};
+		EAFBD666209609B300D5D46A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Hume::Hume";
+			remoteInfo = Hume;
+		};
+		EAFBD667209609B300D5D46A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Upsurge::Upsurge";
+			remoteInfo = Upsurge;
+		};
+		EAFBD668209609B500D5D46A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Hume::HumeTests";
+			remoteInfo = HumeTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EAFBD6692096195000D5D46A /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		"Hume::Hume::Product" /* Hume.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Hume.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"Hume::HumeTests::Product" /* HumeTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = HumeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_12 /* HumeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumeTests.swift; sourceTree = "<group>"; };
+		OBJ_13 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
+		OBJ_17 /* 2DTensorSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2DTensorSlice.swift; sourceTree = "<group>"; };
+		OBJ_18 /* Arithmetic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arithmetic.swift; sourceTree = "<group>"; };
+		OBJ_19 /* Auxiliary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auxiliary.swift; sourceTree = "<group>"; };
+		OBJ_20 /* Complex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Complex.swift; sourceTree = "<group>"; };
+		OBJ_21 /* ComplexArithmetic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexArithmetic.swift; sourceTree = "<group>"; };
+		OBJ_22 /* ComplexArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexArray.swift; sourceTree = "<group>"; };
+		OBJ_23 /* ComplexArrayRealSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexArrayRealSlice.swift; sourceTree = "<group>"; };
+		OBJ_24 /* ComplexArraySlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexArraySlice.swift; sourceTree = "<group>"; };
+		OBJ_25 /* DSP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSP.swift; sourceTree = "<group>"; };
+		OBJ_26 /* Exponential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exponential.swift; sourceTree = "<group>"; };
+		OBJ_27 /* FFT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFT.swift; sourceTree = "<group>"; };
+		OBJ_28 /* Hyperbolic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hyperbolic.swift; sourceTree = "<group>"; };
+		OBJ_29 /* Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval.swift; sourceTree = "<group>"; };
+		OBJ_30 /* LinearOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearOperators.swift; sourceTree = "<group>"; };
+		OBJ_31 /* LinearType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearType.swift; sourceTree = "<group>"; };
+		OBJ_32 /* Matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		OBJ_33 /* MatrixArithmetic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixArithmetic.swift; sourceTree = "<group>"; };
+		OBJ_34 /* MatrixSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixSlice.swift; sourceTree = "<group>"; };
+		OBJ_35 /* PointerUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointerUtilities.swift; sourceTree = "<group>"; };
+		OBJ_36 /* QuadraticType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuadraticType.swift; sourceTree = "<group>"; };
+		OBJ_37 /* Real.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Real.swift; sourceTree = "<group>"; };
+		OBJ_38 /* Sequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
+		OBJ_39 /* Span.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Span.swift; sourceTree = "<group>"; };
+		OBJ_40 /* Tensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tensor.swift; sourceTree = "<group>"; };
+		OBJ_41 /* TensorSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TensorSlice.swift; sourceTree = "<group>"; };
+		OBJ_42 /* TensorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TensorType.swift; sourceTree = "<group>"; };
+		OBJ_43 /* Trigonometric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trigonometric.swift; sourceTree = "<group>"; };
+		OBJ_44 /* Value.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Value.swift; sourceTree = "<group>"; };
+		OBJ_45 /* ValueArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueArray.swift; sourceTree = "<group>"; };
+		OBJ_46 /* ValueArraySlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueArraySlice.swift; sourceTree = "<group>"; };
+		OBJ_47 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/javiersagredo/Desktop/Hume/.build/checkouts/Upsurge.git-397179526005210237/Package.swift"; sourceTree = "<group>"; };
+		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		OBJ_9 /* Hume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hume.swift; sourceTree = "<group>"; };
+		"Upsurge::Upsurge::Product" /* Upsurge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Upsurge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		OBJ_119 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_59 /* Upsurge.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_80 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_81 /* Hume.framework in Frameworks */,
+				OBJ_82 /* Upsurge.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		OBJ_10 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_11 /* HumeTests */,
+			);
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_11 /* HumeTests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_12 /* HumeTests.swift */,
+				OBJ_13 /* XCTestManifests.swift */,
+			);
+			name = HumeTests;
+			path = Tests/HumeTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_14 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_15 /* Upsurge 0.10.2 */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		OBJ_15 /* Upsurge 0.10.2 */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_16 /* Upsurge */,
+				OBJ_47 /* Package.swift */,
+			);
+			name = "Upsurge 0.10.2";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_16 /* Upsurge */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_17 /* 2DTensorSlice.swift */,
+				OBJ_18 /* Arithmetic.swift */,
+				OBJ_19 /* Auxiliary.swift */,
+				OBJ_20 /* Complex.swift */,
+				OBJ_21 /* ComplexArithmetic.swift */,
+				OBJ_22 /* ComplexArray.swift */,
+				OBJ_23 /* ComplexArrayRealSlice.swift */,
+				OBJ_24 /* ComplexArraySlice.swift */,
+				OBJ_25 /* DSP.swift */,
+				OBJ_26 /* Exponential.swift */,
+				OBJ_27 /* FFT.swift */,
+				OBJ_28 /* Hyperbolic.swift */,
+				OBJ_29 /* Interval.swift */,
+				OBJ_30 /* LinearOperators.swift */,
+				OBJ_31 /* LinearType.swift */,
+				OBJ_32 /* Matrix.swift */,
+				OBJ_33 /* MatrixArithmetic.swift */,
+				OBJ_34 /* MatrixSlice.swift */,
+				OBJ_35 /* PointerUtilities.swift */,
+				OBJ_36 /* QuadraticType.swift */,
+				OBJ_37 /* Real.swift */,
+				OBJ_38 /* Sequence.swift */,
+				OBJ_39 /* Span.swift */,
+				OBJ_40 /* Tensor.swift */,
+				OBJ_41 /* TensorSlice.swift */,
+				OBJ_42 /* TensorType.swift */,
+				OBJ_43 /* Trigonometric.swift */,
+				OBJ_44 /* Value.swift */,
+				OBJ_45 /* ValueArray.swift */,
+				OBJ_46 /* ValueArraySlice.swift */,
+			);
+			name = Upsurge;
+			path = ".build/checkouts/Upsurge.git-397179526005210237/Sources/Upsurge";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_48 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				"Hume::HumeTests::Product" /* HumeTests.xctest */,
+				"Hume::Hume::Product" /* Hume.framework */,
+				"Upsurge::Upsurge::Product" /* Upsurge.framework */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		OBJ_5 /*  */ = {
+			isa = PBXGroup;
+			children = (
+				EAFBD6692096195000D5D46A /* .travis.yml */,
+				OBJ_6 /* Package.swift */,
+				OBJ_7 /* Sources */,
+				OBJ_10 /* Tests */,
+				OBJ_14 /* Dependencies */,
+				OBJ_48 /* Products */,
+			);
+			name = "";
+			sourceTree = "<group>";
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_8 /* Hume */,
+			);
+			name = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_8 /* Hume */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_9 /* Hume.swift */,
+			);
+			name = Hume;
+			path = Sources/Hume;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		"Hume::Hume" /* Hume */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_53 /* Build configuration list for PBXNativeTarget "Hume" */;
+			buildPhases = (
+				OBJ_56 /* Sources */,
+				OBJ_58 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_60 /* PBXTargetDependency */,
+			);
+			name = Hume;
+			productName = Hume;
+			productReference = "Hume::Hume::Product" /* Hume.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"Hume::HumeTests" /* HumeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_74 /* Build configuration list for PBXNativeTarget "HumeTests" */;
+			buildPhases = (
+				OBJ_77 /* Sources */,
+				OBJ_80 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_83 /* PBXTargetDependency */,
+				OBJ_84 /* PBXTargetDependency */,
+			);
+			name = HumeTests;
+			productName = HumeTests;
+			productReference = "Hume::HumeTests::Product" /* HumeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		"Hume::SwiftPMPackageDescription" /* HumePackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_63 /* Build configuration list for PBXNativeTarget "HumePackageDescription" */;
+			buildPhases = (
+				OBJ_66 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HumePackageDescription;
+			productName = HumePackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+		"Upsurge::SwiftPMPackageDescription" /* UpsurgePackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_121 /* Build configuration list for PBXNativeTarget "UpsurgePackageDescription" */;
+			buildPhases = (
+				OBJ_124 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UpsurgePackageDescription;
+			productName = UpsurgePackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+		"Upsurge::Upsurge" /* Upsurge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_85 /* Build configuration list for PBXNativeTarget "Upsurge" */;
+			buildPhases = (
+				OBJ_88 /* Sources */,
+				OBJ_119 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Upsurge;
+			productName = Upsurge;
+			productReference = "Upsurge::Upsurge::Product" /* Upsurge.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		OBJ_1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 9999;
+			};
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "Hume" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = OBJ_5 /*  */;
+			productRefGroup = OBJ_48 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				"Hume::Hume" /* Hume */,
+				"Hume::SwiftPMPackageDescription" /* HumePackageDescription */,
+				"Hume::HumePackageTests::ProductTarget" /* HumePackageTests */,
+				"Hume::HumeTests" /* HumeTests */,
+				"Upsurge::Upsurge" /* Upsurge */,
+				"Upsurge::SwiftPMPackageDescription" /* UpsurgePackageDescription */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		OBJ_124 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_125 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_57 /* Hume.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_67 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_78 /* HumeTests.swift in Sources */,
+				OBJ_79 /* XCTestManifests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_89 /* 2DTensorSlice.swift in Sources */,
+				OBJ_90 /* Arithmetic.swift in Sources */,
+				OBJ_91 /* Auxiliary.swift in Sources */,
+				OBJ_92 /* Complex.swift in Sources */,
+				OBJ_93 /* ComplexArithmetic.swift in Sources */,
+				OBJ_94 /* ComplexArray.swift in Sources */,
+				OBJ_95 /* ComplexArrayRealSlice.swift in Sources */,
+				OBJ_96 /* ComplexArraySlice.swift in Sources */,
+				OBJ_97 /* DSP.swift in Sources */,
+				OBJ_98 /* Exponential.swift in Sources */,
+				OBJ_99 /* FFT.swift in Sources */,
+				OBJ_100 /* Hyperbolic.swift in Sources */,
+				OBJ_101 /* Interval.swift in Sources */,
+				OBJ_102 /* LinearOperators.swift in Sources */,
+				OBJ_103 /* LinearType.swift in Sources */,
+				OBJ_104 /* Matrix.swift in Sources */,
+				OBJ_105 /* MatrixArithmetic.swift in Sources */,
+				OBJ_106 /* MatrixSlice.swift in Sources */,
+				OBJ_107 /* PointerUtilities.swift in Sources */,
+				OBJ_108 /* QuadraticType.swift in Sources */,
+				OBJ_109 /* Real.swift in Sources */,
+				OBJ_110 /* Sequence.swift in Sources */,
+				OBJ_111 /* Span.swift in Sources */,
+				OBJ_112 /* Tensor.swift in Sources */,
+				OBJ_113 /* TensorSlice.swift in Sources */,
+				OBJ_114 /* TensorType.swift in Sources */,
+				OBJ_115 /* Trigonometric.swift in Sources */,
+				OBJ_116 /* Value.swift in Sources */,
+				OBJ_117 /* ValueArray.swift in Sources */,
+				OBJ_118 /* ValueArraySlice.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		OBJ_60 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Upsurge::Upsurge" /* Upsurge */;
+			targetProxy = EAFBD665209609B300D5D46A /* PBXContainerItemProxy */;
+		};
+		OBJ_72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Hume::HumeTests" /* HumeTests */;
+			targetProxy = EAFBD668209609B500D5D46A /* PBXContainerItemProxy */;
+		};
+		OBJ_83 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Hume::Hume" /* Hume */;
+			targetProxy = EAFBD666209609B300D5D46A /* PBXContainerItemProxy */;
+		};
+		OBJ_84 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Upsurge::Upsurge" /* Upsurge */;
+			targetProxy = EAFBD667209609B300D5D46A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		OBJ_122 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Library/Developer/CommandLineTools/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		OBJ_123 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Library/Developer/CommandLineTools/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+		OBJ_54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Hume.xcodeproj/Hume_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Hume;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Hume;
+			};
+			name = Debug;
+		};
+		OBJ_55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Hume.xcodeproj/Hume_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Hume;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Hume;
+			};
+			name = Release;
+		};
+		OBJ_64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Library/Developer/CommandLineTools/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		OBJ_65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Library/Developer/CommandLineTools/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		OBJ_70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		OBJ_71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		OBJ_75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Hume.xcodeproj/HumeTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = HumeTests;
+			};
+			name = Debug;
+		};
+		OBJ_76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Hume.xcodeproj/HumeTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = HumeTests;
+			};
+			name = Release;
+		};
+		OBJ_86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Hume.xcodeproj/Upsurge_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Upsurge;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Upsurge;
+			};
+			name = Debug;
+		};
+		OBJ_87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Hume.xcodeproj/Upsurge_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Upsurge;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Upsurge;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		OBJ_121 /* Build configuration list for PBXNativeTarget "UpsurgePackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_122 /* Debug */,
+				OBJ_123 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_2 /* Build configuration list for PBXProject "Hume" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_53 /* Build configuration list for PBXNativeTarget "Hume" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_54 /* Debug */,
+				OBJ_55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_63 /* Build configuration list for PBXNativeTarget "HumePackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_64 /* Debug */,
+				OBJ_65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_69 /* Build configuration list for PBXAggregateTarget "HumePackageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_70 /* Debug */,
+				OBJ_71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_74 /* Build configuration list for PBXNativeTarget "HumeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_75 /* Debug */,
+				OBJ_76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_85 /* Build configuration list for PBXNativeTarget "Upsurge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_86 /* Debug */,
+				OBJ_87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = OBJ_1 /* Project object */;
+}

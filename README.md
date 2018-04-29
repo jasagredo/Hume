@@ -33,8 +33,8 @@ print(h.resuelve())
 
 - [x] Actually convert this into a library
 - [ ] Allow minimization problems
-- [ ] Check NaN and Inf costs
-- [ ] Translate methods and variables to English
+- [x] Check NaN and Inf costs
+- [x] Translate methods and variables to English
 
 ## License
 
