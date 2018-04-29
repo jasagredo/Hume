@@ -1,6 +1,6 @@
 import Upsurge
 
-class HunSolver {
+public class HunSolver {
     private var matriz: Matrix<Double>
     private var match: [Int]
     private var vis: [Bool]
@@ -9,7 +9,7 @@ class HunSolver {
     
     // Inicialización
     // Coste: O(n^2)
-    init(matriz:[[Double]]){
+    public init(matriz:[[Double]]){
         self.match = [Int]()
         self.vis = [Bool]()
         self.adjM = [[Int]]()
