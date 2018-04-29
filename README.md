@@ -6,8 +6,6 @@ It can handle not balanced cost matrix and is prepared for minimization although
 
 ## Installation
 
-This doesn't work yet (but it will).
-
 You can use the Swift Package Manager to install HungarianSolver by adding the proper description to your Package.swift file:
 
 ```swift
@@ -17,7 +15,7 @@ let package = Package(
     name: "YOUR_PROJECT_NAME",
     targets: [],
     dependencies: [
-        .package(url: "https://github.com/Jasagredo/Hume.git", from: "1.0.2"),
+        .package(url: "https://github.com/Jasagredo/Hume.git", from: "0.0.2"),
     ]
 )
 ```
@@ -33,7 +31,7 @@ print(h.resuelve())
 
 ## Future work
 
-- [ ] Actually convert this into a library
+- [x] Actually convert this into a library
 - [ ] Allow minimization problems
 - [ ] Check NaN and Inf costs
 - [ ] Translate methods and variables to English
