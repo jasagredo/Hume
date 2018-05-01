@@ -28,7 +28,7 @@ public class HunSolver {
         let n = max(f,c)
         self.matrix = Matrix(rows: n, columns: n, repeatedValue: 0)
         self.maximum = 0
-        if maximization {
+        if self.maximization {
             for i in 0..<f {
                 for j in 0..<c {
                     if self.maximum < matrix[i][j] {
@@ -45,7 +45,7 @@ public class HunSolver {
                         if matrix[i][j] == Double.infinity || matrix[i][j].isNaN || matrix[i][j] < 0 {
                             return nil
                         }
-                        if maximization {
+                        if self.maximization {
                             self.matrix[i,j] = maximum - matrix[i][j]
                             self.matrixMax![i,j] = matrix[i][j]
                         } else {
@@ -55,7 +55,7 @@ public class HunSolver {
                 }
             }
         }
-        if !maximization {
+        if !self.maximization {
             self.matrixMax = nil
         }
     }
@@ -99,13 +99,13 @@ public class HunSolver {
         // 5: Obtain the final cost
         var cost:Double = 0
         for (i,j) in pos {
-            if maximization {
+            if self.maximization {
                 cost += self.matrixMax![i,j]
             } else {
                 cost += self.matrix[i,j]
             }
         }
-        if maximization {
+        if self.maximization {
             cost -= self.maximum*Double(self.maxdif)
         }
         return (cost, pos)
@@ -226,7 +226,7 @@ public class HunSolver {
     
     // Obtain maximum cost matching
     // Extracted from Competitive Programming 3 section 4.7.4
-    // Coste: O(VE)
+    // Coste: O(n^2)
     private func obtainMatches(matrix mat: Matrix<Double>) -> [(Int, Int)] {
         var MCBM = 0
         self.adjM = [[Int]]()
