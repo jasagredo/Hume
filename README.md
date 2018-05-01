@@ -16,7 +16,7 @@ let package = Package(
     name: "YOUR_PROJECT_NAME",
     targets: [],
     dependencies: [
-        .package(url: "https://github.com/Jasagredo/Hume.git", from: "0.0.3"),
+        .package(url: "https://github.com/Jasagredo/Hume.git", from: "0.0.4"),
     ]
 )
 ```
