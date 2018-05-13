@@ -3,7 +3,7 @@
 
 This project implements the [Hungarian method](https://en.wikipedia.org/wiki/Hungarian_algorithm) solver.
 
-It can handle not balanced cost matrix and is prepared for minimization although maybe in the future it could be extended to support maximization.
+It can handle not balanced cost matrix and is prepared for minimization and maximization.
 
 ## Installation
 
@@ -16,26 +16,19 @@ let package = Package(
     name: "YOUR_PROJECT_NAME",
     targets: [],
     dependencies: [
-        .package(url: "https://github.com/Jasagredo/Hume.git", from: "0.0.4"),
+        .package(url: "https://github.com/Jasagredo/Hume.git", from: "0.0.5"),
     ]
 )
 ```
 
 ## Usage
 
-Once the Hume class is imported, just declare a solver and ask for a solution. The algorithm runs in O(n^3).
+Once the Hume class is imported, just declare a solver and ask for a solution. The algorithm runs in O(n^4).
 
 ```swift
 var h = HunSolver(matrix: mat)
 print(h.solve())
 ```
-
-## Future work
-
-- [x] Actually convert this into a library
-- [x] Allow minimization problems
-- [x] Check NaN and Inf costs
-- [x] Translate methods and variables to English
 
 ## License
 

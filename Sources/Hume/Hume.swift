@@ -10,7 +10,7 @@ public class HunSolver {
     private var vis: [Bool]
     private var adjM: [[Int]]
     private var zeros: [(Int, Int)]
-    
+
     // Init
     // Cost: O(n^2)
     public init?(matrix:[[Double]], maxim: Bool = false) {
@@ -59,9 +59,9 @@ public class HunSolver {
             self.matrixMax = nil
         }
     }
-    
+
     // Solve the assignment problem
-    // Coste: O(n^3)
+    // Cost: O(n^4)
     public func solve() -> (Double, [(Int, Int)]){
         var resultMatrix = self.matrix.copy()
         // 1: substract the minimum of each row
@@ -71,11 +71,11 @@ public class HunSolver {
                 resultMatrix[i,j] -= mi_minimo!
             }
         }
-        
+
         // 2: substract the minimum of each column
         let costesT = (self.matrix)′
         resultMatrix = (resultMatrix)′
-        
+
         for i in 0..<costesT.rows {
             let mi_minimo = resultMatrix.row(i).min()
             for j in 0..<costesT.columns {
@@ -83,7 +83,7 @@ public class HunSolver {
             }
         }
         resultMatrix = (resultMatrix)′
-        
+
         // 3: Obtain the maximum matching in the reduced cost matrix
         var pos = [(Int,Int)] ()
         // In each loop, the cardinal of the matching increases at least in one, so this loop runs n times
@@ -93,9 +93,9 @@ public class HunSolver {
                 // 4: Substract the minimum to not crossed elements and add it to double crossed elements
                 resultMatrix = adjustMatrix(resultMatrix, pos)
             }
-            
+
         }
-        
+
         // 5: Obtain the final cost
         var cost:Double = 0
         for (i,j) in pos {
@@ -110,8 +110,8 @@ public class HunSolver {
         }
         return (cost, pos)
     }
-    
-    
+
+
     // Create the lines through the matrix and add or substract the minimum
     // O(n^2)
     private func adjustMatrix(_ mat: Matrix<Double>, _ mark: [(Int,Int)]) -> Matrix<Double> {
@@ -119,17 +119,17 @@ public class HunSolver {
         var columns = [[Int]](repeating: [Int](repeating: 0, count: mat.rows), count: mat.rows)
         var markR = [Bool](repeating: false, count: mat.rows)
         var markC = [Bool](repeating: false, count: mat.rows)
-        
+
         for elem in self.zeros {                                                        // O(n^2)
             rows[elem.0][elem.1] = 1
             columns[elem.1][elem.0] = 1
         }
-        
+
         for elem in mark {                                                          // O(n)
             rows[elem.0][elem.1] = 2
             columns[elem.1][elem.0] = 2
         }
-        
+
         for i in 0..<mat.rows {                                                         // O(n)
             if rows[i].max()! < 2 && !markR[i] {
                 markR[i] = true
@@ -144,9 +144,9 @@ public class HunSolver {
         }
         var auxf = markR
         var auxc = markC
-        
+
         while true {                                                                    // O(n) * O(body) = O(n^2)
-            
+
             for i in 0..<mat.rows {                                                             // O(n)
                 if columns[i].max()! == 3 {
                     markC[i] = true
@@ -157,7 +157,7 @@ public class HunSolver {
                     }
                 }
             }
-            
+
             for i in 0..<mat.rows {                                                             // O(n)
                 if rows[i].max()! < 2 && !markR[i] {
                     markR[i] = true
@@ -177,7 +177,7 @@ public class HunSolver {
                 auxc = markC
             }
         }
-        
+
         var minimum = Double.infinity
         for i in 0..<mat.rows {                                                         // O(n^2)
             if markR[i]{
@@ -205,10 +205,10 @@ public class HunSolver {
                 mat[i,j] += minimum
             }
         }
-        
+
         return mat
     }
-    
+
     private func augment(_ l: Int) -> Int {
         if self.vis[l] {
             return 0
@@ -223,10 +223,10 @@ public class HunSolver {
         }
         return 0
     }
-    
+
     // Obtain maximum cost matching
     // Extracted from Competitive Programming 3 section 4.7.4
-    // Coste: O(n^2)
+    // Coste: O(VE) = O(n^3)
     private func obtainMatches(matrix mat: Matrix<Double>) -> [(Int, Int)] {
         var MCBM = 0
         self.adjM = [[Int]]()
@@ -254,4 +254,3 @@ public class HunSolver {
         return(positions)
     }
 }
-
